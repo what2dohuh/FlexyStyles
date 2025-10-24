@@ -1,0 +1,114 @@
+.hero-container {
+                    display: flex;
+                    flex-direction: column; /* Stacked by default on mobile */
+                    align-items: center;
+                    max-width: 1400px;
+                    margin: 0 auto;
+                    padding: 3rem 1rem;
+                    background-color: #fff; /* White background */
+                    border-bottom: 1px solid #f0f0f0;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+                }
+
+                @media (min-width: 1024px) {
+                    .hero-container {
+                        flex-direction: row; /* Side-by-side on desktop */
+                        padding: 5rem 2rem;
+                        min-height: 80vh;
+                    }
+                }
+
+                .hero-content-left {
+                    flex: 1;
+                    padding: 2rem 1rem;
+                    text-align: center;
+                    opacity: 0;
+                    animation: slideInLeft 0.8s ease-out forwards;
+                    animation-delay: 0.1s;
+                }
+
+                @media (min-width: 1024px) {
+                    .hero-content-left {
+                        padding-right: 4rem;
+                        text-align: left;
+                    }
+                }
+
+                .hero-title {
+                    font-family: 'Inter', sans-serif;
+                    font-size: clamp(2.5rem, 5vw, 4.5rem);
+                    font-weight: 800;
+                    color: #000;
+                    line-height: 1.1;
+                    margin-bottom: 1rem;
+                    letter-spacing: -0.05em;
+                }
+
+                .hero-subtitle {
+                    font-family: 'Inter', sans-serif;
+                    font-size: clamp(1rem, 2vw, 1.3rem);
+                    font-weight: 400;
+                    color: #555;
+                    margin-bottom: 2.5rem;
+                    max-width: 600px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+
+                @media (min-width: 1024px) {
+                    .hero-subtitle {
+                        margin-left: 0;
+                        margin-right: 0;
+                    }
+                }
+
+                .hero-cta-button {
+                    padding: 1rem 2.5rem;
+                    font-size: 1rem;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 0.1em;
+                    color: #fff;
+                    background-color: #000;
+                    border: 2px solid #000;
+                    border-radius: 50px;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                }
+
+                .hero-cta-button:hover {
+                    background-color: #333;
+                    transform: translateY(-2px);
+                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+                }
+
+                .hero-image-right {
+                    flex: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 1rem;
+                    opacity: 0;
+                    animation: fadeInScale 0.8s ease-out 0.2s forwards;
+                }
+
+                .hero-main-image {
+                    width: 100%;
+                    max-width: 600px;
+                    height: auto;
+                    border-radius: 16px;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                    object-fit: cover;
+                }
+
+                /* Keyframe for Hero Animations */
+                @keyframes slideInLeft {
+                    from { opacity: 0; transform: translateX(-50px); }
+                    to { opacity: 1; transform: translateX(0); }
+                }
+
+                @keyframes fadeInScale {
+                    from { opacity: 0; transform: scale(0.95); }
+                    to { opacity: 1; transform: scale(1); }
+                }

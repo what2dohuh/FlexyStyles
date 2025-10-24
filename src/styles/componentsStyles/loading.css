@@ -1,0 +1,50 @@
+/* Wrapper to center the loader */
+.equalizer-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent; /* change to #fff or #000 if you want a backdrop */
+  z-index: 9999;
+}
+
+/* Equalizer container styling */
+.equalizer-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 6px;
+  height: 50px;
+}
+
+/* Each bar */
+.equalizer-bar {
+  width: 8px;
+  height: 15%;
+  background-color: #06f;
+  border-radius: 4px;
+  animation: equalize 1s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes equalize {
+  0% {
+    height: 20%;
+  }
+  25% {
+    height: 100%;
+  }
+  50% {
+    height: 40%;
+  }
+  75% {
+    height: 80%;
+  }
+  100% {
+    height: 20%;
+  }
+}

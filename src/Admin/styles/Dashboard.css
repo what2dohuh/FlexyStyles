@@ -1,0 +1,671 @@
+
+
+.adm-dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.adm-sidebar {
+  width: 260px;
+  background: #ffffff;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.adm-logo {
+  padding: 30px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.adm-logo h2 {
+  font-size: 24px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.adm-nav {
+  padding: 20px 0;
+  flex: 1;
+}
+
+.adm-sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.adm-sidebar-footer {
+  margin-top: auto;
+  padding: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.adm-logout-btn {
+  width: 100%;
+  padding: 14px 20px;
+  border: none;
+  background: #ffebee;
+  color: #c62828;
+  text-align: left;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.adm-logout-btn:hover {
+  background: #ffcdd2;
+  transform: translateY(-2px);
+}
+
+.adm-nav-item {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  font-size: 15px;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.adm-nav-item:hover {
+  background: #f8f9fa;
+  color: #2c3e50;
+}
+
+.adm-nav-item.active {
+  background: #e3f2fd;
+  color: #1976d2;
+  font-weight: 500;
+}
+
+.adm-nav-item.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #1976d2;
+}
+
+.adm-icon {
+  font-size: 20px;
+}
+
+/* Main Content */
+.adm-main {
+  margin-left: 260px;
+  flex: 1;
+  padding: 40px;
+  width: calc(100% - 260px);
+}
+
+.adm-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.adm-tab-content {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.adm-title {
+  font-size: 32px;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+/* Products Grid */
+.adm-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.adm-product-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.adm-product-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.adm-product-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.adm-product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.adm-product-name {
+  font-size: 18px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.adm-product-category {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.adm-product-price {
+  font-size: 20px;
+  color: #1976d2;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.adm-product-rating {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+  color: #6c757d;
+  margin-top: 4px;
+}
+
+.adm-product-desc {
+  font-size: 14px;
+  color: #6c757d;
+  line-height: 1.5;
+  margin-top: 8px;
+}
+
+.adm-product-meta {
+  font-size: 13px;
+  color: #495057;
+  margin-top: 8px;
+}
+
+.adm-product-features {
+  font-size: 13px;
+  color: #495057;
+  margin-top: 12px;
+}
+
+.adm-product-features ul {
+  margin-top: 6px;
+  padding-left: 20px;
+}
+
+.adm-product-features li {
+  margin-bottom: 4px;
+}
+
+.adm-badge-new {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #4caf50;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.adm-product-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Edit Form */
+.adm-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.adm-edit-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+/* Form Styles */
+.adm-form {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  max-width: 800px;
+}
+
+.adm-form-group {
+  margin-bottom: 24px;
+}
+
+.adm-form-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.adm-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.adm-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background: #ffffff;
+}
+
+.adm-input:focus {
+  outline: none;
+  border-color: #1976d2;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+}
+
+.adm-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  resize: vertical;
+  transition: all 0.3s ease;
+  background: #ffffff;
+}
+
+.adm-textarea:focus {
+  outline: none;
+  border-color: #1976d2;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+}
+
+.adm-file-input {
+  width: 100%;
+  padding: 12px;
+  border: 2px dashed #dee2e6;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.adm-file-input:hover {
+  border-color: #1976d2;
+}
+
+.adm-image-previews {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.adm-preview-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #f0f0f0;
+}
+
+.adm-chip-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.adm-chip-input .adm-input {
+  flex: 1;
+}
+
+.adm-btn-add-chip {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 10px 20px;
+  white-space: nowrap;
+}
+
+.adm-btn-add-chip:hover {
+  background: #bbdefb;
+}
+
+.adm-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.adm-chip {
+  background: #f5f5f5;
+  color: #2c3e50;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.adm-chip-remove {
+  background: transparent;
+  border: none;
+  color: #6c757d;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.adm-chip-remove:hover {
+  background: #e0e0e0;
+  color: #2c3e50;
+}
+
+.adm-form-section {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.adm-section-title {
+  font-size: 18px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.adm-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: #2c3e50;
+  cursor: pointer;
+}
+
+.adm-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #1976d2;
+}
+
+.adm-product-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+/* Buttons */
+.adm-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.adm-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.adm-btn:active {
+  transform: translateY(0);
+}
+
+.adm-btn-primary {
+  background: #1976d2;
+  color: #ffffff;
+  padding: 14px 32px;
+  font-size: 16px;
+}
+
+.adm-btn-primary:hover {
+  background: #1565c0;
+}
+
+.adm-btn-edit {
+  background: #e3f2fd;
+  color: #1976d2;
+  flex: 1;
+}
+
+.adm-btn-edit:hover {
+  background: #bbdefb;
+}
+
+.adm-btn-delete {
+  background: #ffebee;
+  color: #c62828;
+  flex: 1;
+}
+
+.adm-btn-delete:hover {
+  background: #ffcdd2;
+}
+
+.adm-btn-save {
+  background: #4caf50;
+  color: #ffffff;
+  flex: 1;
+}
+
+.adm-btn-save:hover {
+  background: #45a049;
+}
+
+.adm-btn-cancel {
+  background: #f5f5f5;
+  color: #6c757d;
+  flex: 1;
+}
+
+.adm-btn-cancel:hover {
+  background: #e0e0e0;
+}
+
+.adm-btn-status {
+  background: #fff3e0;
+  color: #f57c00;
+  padding: 10px 20px;
+}
+
+.adm-btn-status:hover {
+  background: #ffe0b2;
+}
+
+/* Orders Styles */
+.adm-orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.adm-order-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.adm-order-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.adm-order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.adm-order-header h3 {
+  font-size: 18px;
+  color: #2c3e50;
+  margin-bottom: 4px;
+}
+
+.adm-order-date {
+  font-size: 13px;
+  color: #6c757d;
+}
+
+.adm-status {
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.adm-status-pending {
+  background: #fff3e0;
+  color: #f57c00;
+}
+
+.adm-status-shipped {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.adm-status-delivered {
+  background: #e8f5e9;
+  color: #388e3c;
+}
+
+.adm-order-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.adm-order-body p {
+  font-size: 15px;
+  color: #495057;
+}
+
+.adm-order-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .adm-products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+  
+  .adm-form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .adm-sidebar {
+    width: 200px;
+  }
+  
+  .adm-main {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+    padding: 20px;
+  }
+  
+  .adm-title {
+    font-size: 24px;
+  }
+  
+  .adm-products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.adm-order-img img {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.adm-order-details p,
+.adm-order-shipping p {
+  margin: 3px 0;
+  font-size: 14px;
+}
+
+.adm-order-shipping {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid #eee;
+}
+
+.adm-order-history {
+  margin-top: 12px;
+  border-top: 1px solid #ddd;
+  padding-top: 8px;
+}
+
+.adm-order-history ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  font-size: 13px;
+}

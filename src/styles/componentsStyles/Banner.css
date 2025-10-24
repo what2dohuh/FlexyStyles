@@ -1,0 +1,156 @@
+:root {
+            --primary-color: #000000;
+            --secondary-color: #555555;
+            --background-color: #F8F8F8;
+            --accent-color: #007BFF;
+            --max-width: 900px;
+        }
+
+.banner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 85vh; /* Ample vertical space */
+            
+            /* New Background Image Setup */
+            /* Using a light placeholder image to give a subtle texture */
+            background-image: url('../../assest/flamenco-dresses-chair-with-pink-background.jpg'); 
+            background-size: cover;
+            background-position: center;
+            position: relative; /* Essential for the overlay pseudo-element */
+            overflow: hidden;
+
+            padding: 2rem 1rem;
+            text-align: center;
+            border-radius: 12px;
+            margin: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Very subtle shadow */
+        }
+        
+        /* Overlay for the Blurred/Lightened Effect */
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* White overlay with 70% opacity to wash out and lighten the image */
+            background: rgba(255, 255, 255, 0.096); 
+            z-index: 1; /* Place behind the content */
+        }
+
+        .banner-content {
+            max-width: var(--max-width);
+            padding: 3rem 2rem; /* Ample internal padding */
+            line-height: 1.2;
+            color: var(--primary-color);
+            z-index: 2; /* Ensure content is visible above the overlay */
+            position: relative;
+        }
+        /* ----------------
+           Typography 
+           ---------------- */
+
+        .banner-content h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.05em;
+        }
+
+        .banner-content p {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            font-weight: 300;
+            color: var(--secondary-color);
+            margin-bottom: 2.5rem;
+        }
+
+        /* ----------------
+           CTA Button 
+           ---------------- */
+
+        .cta-button {
+            display: inline-block;
+            padding: 0.8rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #ffffff;
+            background-color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover,
+        .cta-button:focus {
+            background-color: #333333;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ----------------
+           Animations
+           ---------------- */
+
+        /* Define the Keyframe for content entrance */
+        @keyframes fadeInSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Apply the animation to the elements with a stagger */
+        .banner-content > * {
+            opacity: 0; /* Hide elements initially */
+            animation: fadeInSlideUp 0.8s ease-out forwards;
+        }
+
+        /* Staggered delay for each element */
+        .banner-content h1 {
+            animation-delay: 0.2s;
+        }
+        .banner-content p {
+            animation-delay: 0.4s;
+        }
+        .banner-content .cta-button {
+            animation-delay: 0.6s;
+        }
+
+        /* ----------------
+           Responsiveness
+           ---------------- */
+        @media (max-width: 600px) {
+            .banner {
+                height: 90vh;
+                margin: 1rem;
+                padding: 1rem;
+            }
+
+            .banner-content {
+                padding: 2rem 1rem;
+            }
+
+            .banner-content h1 {
+                font-size: 2rem;
+            }
+
+            .banner-content p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 0.7rem 1.8rem;
+                font-size: 0.9rem;
+            }
+        }
