@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import "../styles/componentsStyles/Footer.css"
 
 function FooterComp() {
@@ -12,7 +13,7 @@ function FooterComp() {
           <h4>Customer Service</h4>
           <ul>
             <li>Contact Us</li>
-            <li>Shipping Info</li>
+            <Link to="/termsandcondition"><li>Terms and Conditions</li></Link>
             <li>Returns</li>
           </ul>
         </div>
