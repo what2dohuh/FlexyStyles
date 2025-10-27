@@ -75,7 +75,7 @@ const PaymentButton = ({
       const data = await response.json();
 
       const options = {
-        key: "rzp_test_RVM3TBM0GpnfHN",
+        key: "",
         amount: data.amount,
         currency: data.currency,
         order_id: data.id,

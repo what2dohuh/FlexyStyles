@@ -326,7 +326,7 @@ function Checkout() {
           shippingCost: shippingCost,
           tax: tax,
           totalAmount: totalAmount,
-          status: 'Processing',
+          status: 'Pending',
           shippingInfo: {
             name: shippingInfo.name,
             email: shippingInfo.email,

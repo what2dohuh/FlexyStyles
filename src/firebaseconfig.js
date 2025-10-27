@@ -8,11 +8,17 @@ import { getAuth } from "firebase/auth";
 // Replace these with your actual Firebase project credentials
 const firebaseConfig = {
   apiKey: "",
+
   authDomain: "",
+
   projectId: "",
+
   storageBucket: "",
+
   messagingSenderId: "",
+
   appId: "",
+
   measurementId: ""
 };
 

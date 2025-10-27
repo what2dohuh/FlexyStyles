@@ -20,7 +20,15 @@ exports.createOrder = onRequest({
   invoker: "public"
 }, async (req, res) => {
   // Set CORS headers
-  res.set("Access-Control-Allow-Origin", "*");
+const allowedOrigins = [
+  "https://flexystyles.in",
+  "https://www.flexystyles.in"
+];
+
+const origin = req.headers.origin;
+if (allowedOrigins.includes(origin)) {
+  res.set("Access-Control-Allow-Origin", origin);
+}
   res.set("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.set("Access-Control-Allow-Headers", "Content-Type");
   
@@ -70,7 +78,15 @@ exports.verifyPayment = onRequest({
   invoker: "public"
 }, async (req, res) => {
   // Set CORS headers
-  res.set("Access-Control-Allow-Origin", "*");
+const allowedOrigins = [
+  "https://flexystyles.in",
+  "https://www.flexystyles.in"
+];
+
+const origin = req.headers.origin;
+if (allowedOrigins.includes(origin)) {
+  res.set("Access-Control-Allow-Origin", origin);
+}
   res.set("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.set("Access-Control-Allow-Headers", "Content-Type");
 
@@ -107,7 +123,7 @@ exports.verifyPayment = onRequest({
 
     // Generate signature for verification
     const generatedSignature = crypto
-      .createHmac("sha256", "1UdpgKDaHla6lLkVT1pgG9sg") // Your key_secret
+      .createHmac("sha256", "") // Your key_secret
       .update(`${razorpay_order_id}|${razorpay_payment_id}`)
       .digest("hex");
 
