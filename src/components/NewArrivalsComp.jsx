@@ -33,7 +33,6 @@ function NewArrivalsComp() {
         navigate('/login', { state: { from: '/shop' } });
         return;
       }
-
       // Prepare the item data for Buy Now checkout
       const buyNowItem = {
         id: product.id,
@@ -44,10 +43,9 @@ function NewArrivalsComp() {
         selectedSize: product.sizes?.[0] || 'N/A', // Default to first size if available
         selectedColor: product.colors?.[0] || 'N/A', // Default to first color if available
       };
-
       // Navigate to checkout with the item data
-      navigate('/checkout', { 
-        state: { buyNowItem } 
+      navigate('/checkout', {
+        state: { buyNowItem }
       });
     };
 
@@ -57,7 +55,7 @@ function NewArrivalsComp() {
             <div className="product-grid">
                 {newArrival.map(product => (
                   <div key={product.id} className="product-card">
-                      <Link key={product.id} to={`/productdetail/${product.id}`} className="shop-product-link">
+                      <Link to={`/productdetail/${product.id}`} className="shop-product-link">
                         <div className="product-image">
                             <img
                                 src={product.images[0]}
@@ -67,7 +65,8 @@ function NewArrivalsComp() {
                         </div>
                         <h3>{product.name}</h3>
                         <p className="price">₹{product.price}</p>
-                        </Link>
+                      </Link>
+                      <div className="button-container">
                         <button
                             className="add-button"
                             onClick={() => addToCart(product)}
@@ -80,6 +79,7 @@ function NewArrivalsComp() {
                         >
                             Buy Now
                         </button>
+                      </div>
                     </div>
                 ))}
             </div>

@@ -15,7 +15,7 @@ function    HeroSecComp() {
             </div>
             <div className="hero-image-right">
                 <img 
-                    src="https://res.cloudinary.com/debysr2dg/image/upload/v1712653619/cld-sample-5.jpg" 
+                    src="https://firebasestorage.googleapis.com/v0/b/wabclone-763ba.firebasestorage.app/o/products%2F1761587729775_2_New%20Project%20157%20%5BB204A96%5D.png?alt=media&token=20ac9dbd-ac88-4113-bece-797e6c4f9027" 
                     alt="Model wearing new spring collection"
                     className="hero-main-image"
                 />
