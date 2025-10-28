@@ -407,3 +407,26 @@
   .shop-product-img-wrapper { height: 280px; }
   .shop-filter-section { min-width: 100%; }
 }
+/* For mobile view (2 products per row) */
+@media (max-width: 600px) {
+  .shop-products-grid {
+    grid-template-columns: repeat(2, 1fr); /* Exactly 2 per row */
+    gap: 15px; /* Adjust spacing for mobile */
+  }
+
+  .shop-product-img-wrapper {
+    height: 220px; /* Reduce image height for smaller screens */
+  }
+
+  .shop-product-details {
+    padding: 15px;
+  }
+
+  .shop-product-name {
+    font-size: 14px;
+  }
+
+  .shop-product-price-wrapper {
+    font-size: 16px;
+  }
+}
